@@ -6,7 +6,7 @@ import { dirname } from 'path';
 
 const getIpConfig = async ip => {
   const currentDir = dirname(fileURLToPath(import.meta.url));
-  const file = path.join(currentDir, '/GeoIP2-Country.mmdb');
+  const file = path.join(currentDir, './GeoIP2-Country.mmdb');
   const dbBuffer = fs.readFileSync(file);
   const reader = Reader.openBuffer(dbBuffer);
   const response = reader.country(ip);
