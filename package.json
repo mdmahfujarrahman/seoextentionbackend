@@ -1,0 +1,43 @@
+{
+  "name": "seoextention",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "preinstall": "npm i nodemon -g",
+    "start": "nodemon src/server.js",
+    "lint:check": "eslint --ignore-path .eslintignore --ext .js,.ts .",
+    "lint:fix": "eslint . --fix",
+    "prettier:check": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\"",
+    "prettier:fix": "prettier --write .",
+    "lint-prettier": "yarn lint:check && yarn prettier:check",
+    "prepare": "husky install"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "lint-staged": {
+    "src/**/*.js": "yarn lint-prettier"
+  },
+  "dependencies": {
+    "@maxmind/geoip2-node": "^4.2.0",
+    "@typescript-eslint/eslint-plugin": "^6.7.0",
+    "@typescript-eslint/parser": "^6.7.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "eslint-config-prettier": "^9.0.0",
+    "express": "^4.18.2",
+    "lint-staged": "^14.0.1",
+    "nodemon": "^3.0.1",
+    "puppeteer": "^21.1.1",
+    "typescript": "^5.2.2",
+    "winston": "^3.10.0",
+    "zod": "^3.22.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.49.0",
+    "husky": "^8.0.3",
+    "prettier": "^3.0.3"
+  }
+}
